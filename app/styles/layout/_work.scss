@@ -1,0 +1,98 @@
+.work {
+    padding-top: 10rem;
+    &-list {
+        @include flexBox;
+        height: 78rem;
+    }
+    &-column {
+        width: 25%;
+    }
+    &-content {
+        color: white;
+        text-align: center;
+    }
+    &-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    &-title {
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+    &-image {
+        @include size(100%);
+        object-fit: cover;
+    }
+    &-item {
+        height: 50%;
+    }
+    &-item--full {
+        height: 100%;
+    }
+    &-desc {
+        color: white;
+    }
+    @include maxWidth(1279px) {
+        &-list {
+            flex-wrap: wrap;
+            height: auto;
+        }
+        &-column {
+            width: 50%;
+        }
+    }
+    @include maxWidth(767px) {
+        padding-top: 5rem;
+        &-column {
+            width: 100%;
+        }
+    }
+}
+// css grid
+// .work-grid {
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     grid-template-rows: 39rem 39rem;
+//     // grid-template-areas: "h1 h3 h5 h6" "h2 h4 h5 h7";
+//     .work-item {
+//         height: 100%;
+//         &:nth-child(2) {
+//            grid-column: 1/2;
+//            grid-row: 2/-1;
+//         }
+//         &:nth-child(4) {
+//             grid-column: 2/3;
+//         }
+//         &:nth-child(5) {
+//             grid-column: 3/4;
+//             grid-row: 1/ span 2;
+//         }
+//         &:nth-child(6) {
+//             grid-column: 4/-1;
+//             grid-row: 1/2;
+//         }
+//         // &:nth-child(6) {
+//         //     grid-area: h6;
+//         // }
+//         // &:nth-child(2) {
+//         //     grid-area: h2;
+//         // }
+//         // &:nth-child(3) {
+//         //     grid-area: h3;
+//         // }
+//         // &:nth-child(4) {
+//         //     grid-area: h4;
+//         // }
+//         // &:nth-child(5) {
+//         //     grid-area: h5;
+//         // }
+//         // &:nth-child(6) {
+//         //     grid-area: h6;
+//         // }
+//     }
+//     @include maxWidth(767px) {
+//         display: block;
+//     }
+// }
+
+@include hoverEffect(".work-item", ".work-content", "false");

@@ -1,0 +1,112 @@
+.story {
+    padding: 10rem 0;
+    background-color: #fff;
+    --image-height: 24rem;
+    &-list {
+        @include flexBox(stretch, space-between);
+    }
+    &-item {
+        width: calc(33.33% - 2rem);
+    }
+    &-media {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+    &-image {
+        @include size(100%, var(--image-height));
+        object-fit: cover;
+    }
+    &-date {
+        background-color: $third-color;
+        padding: 1.5rem 2rem;
+        @include flexBox(center, center, column);
+        color: white;
+        position: absolute;
+        left: -1rem;
+        bottom: 1rem;
+        z-index: 2;
+        &-number {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        &-text {
+            color: white;
+        }
+    }
+    &-title {
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 2rem;
+        line-height: 1.4;
+    }
+    &-desc {
+        // @include textClaim(2);
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $gray-mid-color;
+    }
+    &-meta {
+        @include flexBox(center);
+        // height: calc(100% - var(--image-height));
+    }
+    &-meta-item {
+        margin-right: 2rem;
+    }
+    &-meta-icon {
+        color: $third-color;
+        margin-right: 0.5rem;
+    }
+    &-meta-number {
+        color: #b3b3b3;
+    }
+    @include maxWidth(1023px) {
+        --image-height: 14rem;
+        padding: 5rem 0;
+        &-date {
+            padding: 1rem 1.5rem;
+        }
+        &-title {
+            font-size: 1.2rem;
+        }
+        &-desc {
+            font-size: 1.3rem;
+        }
+        &-desc-inner {
+            @include textClaim(4);
+        }
+    }
+    @include maxWidth(767px) {
+        --image-height: 20rem;
+        padding-bottom: 0;
+        &-list {
+            display: block;
+        }
+        &-item {
+            width: 100%;
+            margin-bottom: 5rem;
+        }
+    }
+}
+.map {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom, rgba(white, 0.7), rgba(white, 0.7)), url("../images/img-map.png") no-repeat center / cover;
+    &-content {
+        @include flexBox(center,center,column);
+    }
+    &-heading {
+        position: relative;
+        font-weight: bold;
+        font-size: 2.4rem;
+        text-transform: uppercase;
+        color: $primary-color;
+        padding: 2rem 0;
+
+    }
+    &-heading:after {
+        content: "";
+        @include size(6.5rem, 0.4rem);
+        background-color: $primary-color;
+        @include absoluteCenter();
+        bottom: 0;
+    }
+}
