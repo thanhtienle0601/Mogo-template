@@ -2,13 +2,17 @@
 const menuToggle = document.querySelector(".header-toggle");
 const menuHeader = document.querySelector(".header-menu");
 const expandClass = "is-expand";
-menuToggle.addEventListener("click", function() {
-    menuHeader.classList.add(expandClass);
+menuToggle.addEventListener("click", function(e) {
+    menuHeader.classList.toggle(expandClass);
+    e.target.classList.toggle("fa-times");
+    e.target.classList.toggle("fa-bars");
 });
 window.addEventListener("click", function(e) {
     if (!menuHeader.contains(e.target) && !e.target.matches(".header-toggle")) {
         menuHeader.classList.remove(expandClass);
-    }
+        menuToggle.classList.remove("fa-times");
+        menuToggle.classList.add("fa-bars");
+    };
 });
 
 // slick slider

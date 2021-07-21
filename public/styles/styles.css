@@ -276,7 +276,7 @@ button {
         color: #e98382; }
     .header .header-menu-link {
       color: #333333;
-      width: 100%;
+      width: 90%;
       padding: 1.5rem;
       border-radius: 4px; }
       .header .header-menu-link:hover {
@@ -286,7 +286,10 @@ button {
       display: inline-block;
       -ms-flex-item-align: center;
       -ms-grid-row-align: center;
-      align-self: center; } }
+      align-self: center; }
+    .header .fa-times {
+      color: black;
+      z-index: 999; } }
 
 .about {
   padding-top: 9rem;

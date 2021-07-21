@@ -191,7 +191,7 @@
         }
         .header-menu-link {
             color: $title-color;
-            width: 100%;
+            width: 90%;
             padding: 1.5rem;
             border-radius: 4px;
             &:hover {
@@ -202,6 +202,10 @@
         .header-toggle {
             display: inline-block;
             align-self: center;
+        }
+        .fa-times {
+            color: black;
+            z-index: 999;
         }
     }
 
