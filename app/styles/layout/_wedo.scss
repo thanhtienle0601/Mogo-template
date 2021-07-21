@@ -2,18 +2,22 @@
     padding: 11rem 0;
     &-image {
         object-fit: cover;
+        height: 400px;
     }
     &-item:not(:last-child) {
         margin-bottom: 1rem;
     }
-    &-item.is-active .wedo-item-content {
-        display: block;
+    &-item-content.is-active {
+        height: auto;
     }
     &-item-header {
         @include flexBox(center);
         padding: 1.5rem;
         border: 1px solid $gray-mid-color;
         cursor: pointer;
+    }
+    &-item-header * {
+        pointer-events: none;
     }
     &-item-icon {
         margin-right: 1.5rem;
@@ -29,7 +33,6 @@
         font-size: 3rem;
     }
     &-item-content {
-        padding: 2rem;
         border: 1px solid $gray-mid-color;
         border-top: 0;
         font-size: 1.5rem;
@@ -38,7 +41,12 @@
         font-family: $secondary-font;
         line-height: 1.6;
         font-weight: 300;
-        display: none;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.25s linear;
+    }
+    &-item-content-inner {
+        padding: 2rem;
     }
     &-item-text {
         height: 18rem;

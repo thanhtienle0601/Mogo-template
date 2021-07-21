@@ -32,3 +32,18 @@ $(document).ready(function(){
           ]
     });
   });
+
+// accordion
+const wedoHeader = document.querySelectorAll(".wedo-item-header");
+
+wedoHeader.forEach((wedoHeader) => wedoHeader.addEventListener("click", (e) => {
+  const wedoContent = e.target.nextElementSibling;
+  wedoContent.style.height = `${wedoContent.scrollHeight}px`;
+  wedoContent.classList.toggle("is-active");
+  if (!wedoContent.classList.contains("is-active")) {
+    wedoContent.style.height = "0px";
+  };
+  const arrow = e.target.querySelector(".wedo-item-arrow");
+  arrow.classList.toggle("fa-angle-down");
+  arrow.classList.toggle("fa-angle-up");
+}));

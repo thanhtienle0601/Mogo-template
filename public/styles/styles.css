@@ -530,11 +530,12 @@ button {
   padding: 11rem 0; }
   .wedo-image {
     -o-object-fit: cover;
-    object-fit: cover; }
+    object-fit: cover;
+    height: 400px; }
   .wedo-item:not(:last-child) {
     margin-bottom: 1rem; }
-  .wedo-item.is-active .wedo-item-content {
-    display: block; }
+  .wedo-item-content.is-active {
+    height: auto; }
   .wedo-item-header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -554,6 +555,8 @@ button {
     padding: 1.5rem;
     border: 1px solid #e5e5e5;
     cursor: pointer; }
+  .wedo-item-header * {
+    pointer-events: none; }
   .wedo-item-icon {
     margin-right: 1.5rem; }
   .wedo-item-title {
@@ -565,7 +568,6 @@ button {
     color: #cccccc;
     font-size: 3rem; }
   .wedo-item-content {
-    padding: 2rem;
     border: 1px solid #e5e5e5;
     border-top: 0;
     font-size: 1.5rem;
@@ -574,7 +576,12 @@ button {
     font-family: "Roboto", sans-serif;
     line-height: 1.6;
     font-weight: 300;
-    display: none; }
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+  .wedo-item-content-inner {
+    padding: 2rem; }
   .wedo-item-text {
     height: 18rem;
     overflow-y: auto;

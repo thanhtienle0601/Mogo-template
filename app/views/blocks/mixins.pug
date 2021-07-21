@@ -29,13 +29,14 @@ mixin serviceItem(src, title, desc)
             p.service-item-desc= desc 
 
 mixin wedoItem(src, title, desc, active = "")
-    .wedo-item(class= active)
+    .wedo-item
         .wedo-item-header 
             img.wedo-item-icon(src= src)
             h3.wedo-item-title= title
             i.fal.fa-angle-down.wedo-item-arrow 
-        .wedo-item-content 
-            .wedo-item-text= desc
+        .wedo-item-content(class= active)
+            .wedo-item-content-inner
+                .wedo-item-text= desc
 
 mixin teamSocial(facebook = "#", twitter = "#", pinterest = "#", instagram = "#")
     ul.team-social
